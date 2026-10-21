@@ -1,0 +1,21 @@
+import { useLikes } from '../context/LikesContext';
+import { Button } from './ui/Button';
+
+type LikeButtonProps = {
+  postId: number;
+};
+
+export function LikeButton({ postId }: LikeButtonProps) {
+  const { likes, addLike } = useLikes();
+  const count = likes[postId] || 0;
+
+  return (
+    <Button
+      variant="primary"
+      aria-label={`Like (${count} likes)`}
+      onClick={() => addLike(postId)}
+    >
+      {count === 0 ? '🤍 Like' : `❤️ Liked (${count})`}
+    </Button>
+  );
+}
