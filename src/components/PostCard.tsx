@@ -10,6 +10,12 @@ type PostCardProps = {
 export function PostCard({ post }: PostCardProps) {
   return (
     <Card>
+      <img 
+        src={`${import.meta.env.BASE_URL}${post.image.replace('/', '')}`} 
+        alt={post.title} 
+        className="w-full h-48 object-cover rounded-md mb-4"
+      />
+      
       <h3>{post.title}</h3>
       <p className="post-date">{post.date}</p>
       <p>{post.excerpt}</p>

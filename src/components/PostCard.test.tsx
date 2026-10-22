@@ -11,6 +11,7 @@ const post: Post = {
   content: 'Full content',
   date: '1 January 2026',
   tags: ['Testing', 'React'],
+  image: '/test.jpg',
 };
 
 describe('PostCard', () => {
